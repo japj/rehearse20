@@ -15,10 +15,14 @@
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
+    "@types/react-redux": "^7.1.8",
+    "@types/redux-logger": "^3.0.7",
+    "@types/socket.io-client": "^1.4.32",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
     "@types/socket.io": "^2.1.4",
     "electron": "^8.2.5",
+    "electron-devtools-installer": "^3.0.0",
     "electron-packager": "^14.2.1",
     "jest": "^25.5.4",
     "prettier": "^2.0.5",
@@ -27,7 +31,7 @@
   "scripts": {
     "build": "tsc",
     "package": "electron-packager src/client --platform darwin,linux --out dist",
-    "gui": "electron src/client/main.js &",
+    "gui": "electron src/client/main.js --dev&",
     "cli": "node src/client/cli.js",
     "server": "node src/server",
     "test": "jest",
