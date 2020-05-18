@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import io from 'socket.io-client';
 
-import * as serverConstants from '../server/constants';
+import * as serverConstants from './constants';
 import DummyStreamer from './DummyStreamer';
 import TrxStreamer from './TrxStreamer';
 import * as actions from './actions';

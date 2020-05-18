@@ -1,6 +1,6 @@
 import { Socket } from 'socket.io';
 
-import * as constants from './constants';
+import * as constants from '../client/constants';
 import * as rtpPortIdentifier from './rtpPortIdentifier';
 import Session, { Client } from './Session';
 import SessionManager from './SessionManager';

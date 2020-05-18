@@ -6,7 +6,7 @@ import { dirname, resolve } from 'path';
 import socketio from 'socket.io';
 
 import ClientConnection from './ClientConnection';
-import * as constants from './constants';
+import * as constants from '../client/constants';
 import * as rtpPortIdentifier from './rtpPortIdentifier';
 
 const app = express();
