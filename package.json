@@ -18,7 +18,8 @@
     "prettier": "^2.0.5",
     "sinon": "^9.0.2",
     "ts-jest": "^25.5.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "electron-builder": "^22.6.1"
   },
   "scripts": {
     "postinstall": "cd src/client && npm ci",
@@ -28,7 +29,11 @@
     "cli": "node src/client/cli.js",
     "server": "node src/server",
     "test": "jest",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "#prepack": "electron-builder install-appdeps",
+    "#predist": "electron-builder install-appdeps"
   },
   "repository": {
     "type": "git",
@@ -40,5 +45,17 @@
   "bugs": {
     "url": "https://github.com/rhpijnacker/rehearse20/issues"
   },
-  "homepage": "https://github.com/rhpijnacker/rehearse20#readme"
+  "homepage": "https://github.com/rhpijnacker/rehearse20#readme",
+  "build": {
+    "appId": "rehearse20.client.electron",
+    "directories": {
+      "app": "src/client"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  },
+  "main": "src/client/main.js"
 }
