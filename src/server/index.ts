@@ -3,7 +3,7 @@ import http from 'http';
 import socketio, { Socket } from 'socket.io';
 
 import ClientConnection from './ClientConnection';
-import * as constants from './constants';
+import * as constants from '../client/constants';
 import * as rtpPortIdentifier from './rtpPortIdentifier';
 
 const serverId = 'server';
