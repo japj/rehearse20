@@ -1,4 +1,4 @@
-import { ChildProcess, spawn } from 'child_process';
+import { ChildProcess, execFile } from 'child_process';
 import * as path from 'path';
 
 class DummyStreamer {
@@ -61,7 +61,9 @@ class DummyStreamer {
       '-S',
       ssrc,
     ].join(' '));
-    const child = spawn(path.join(__dirname, 'trx', 'trx'), [
+    // https://www.electronjs.org/docs/tutorial/application-packaging#executing-binaries-inside-asar-archive
+    // only execFile is supported to execute binaries inside asar archive.
+    const child = execFile(path.join(__dirname, 'trx', 'trx'), [
       '-p',
       localPort,
       '-h',
